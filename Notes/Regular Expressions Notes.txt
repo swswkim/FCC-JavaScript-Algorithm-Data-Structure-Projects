@@ -1,1 +1,24 @@
+Test Method (Returns true of false if there is a match)
+testRegex.test(testStr);
 
+Match Method (Extracts actual matches)
+testRegex.match(matchStr);
+
+
+|   =  or operator (e.g. /yes|no/;)
+/example/i;   =   ignorecase (i.e. not case sensitive. HelLo and hello is equal)
+/example/g;   =   to extract a pattern more than once.
+
+
+***Only effective to characters or character sets next to the signs)
+.   =   wildcard period ("." can be replaced by any one character) (e.g. let huRegex = /b[aiu]g/;) *Can be bag, big, or bug.
+-   =   range setter (e.g. /[a-c]/; will include characters a, b, and c) (e.g.2 /[a-z0-9]/; will include characters a to z and numbers 0 to 9)
+^   =   carrot character excludes characters you do not want to match. (e.g. /[^aeiou]/; will not include vowels) (e.g.2 /[^aeiou^0-9]/; will not include vowels and numbers)
++   =   Match Characters that Occur One or More Times. (e.g. /a+/g; would find one match in "abc" and return ["a"]. Because of the +, it would also find a single match in "aabc" and return ["aa"].)
+*   =   Match Characters that Occur Zero or More Times (e.g. /go*/; would find one match in "gooooooooal!" and return ["goooooooo"]. It would also find a single match in "gut feeling" and return ["g"].
+
+
+\w  =   [A-Za-z0-9_]
+\W  =   [^A-Za-z0-9_]
+\d  =   [0-9]
+\D  =   [^0-9]
