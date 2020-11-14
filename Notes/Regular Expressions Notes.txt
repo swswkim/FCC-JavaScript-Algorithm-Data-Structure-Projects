@@ -10,15 +10,25 @@ testRegex.match(matchStr);
 /example/g;   =   to extract a pattern more than once.
 
 
-***Only effective to characters or character sets next to the signs)
-.   =   wildcard period ("." can be replaced by any one character) (e.g. let huRegex = /b[aiu]g/;) *Can be bag, big, or bug.
--   =   range setter (e.g. /[a-c]/; will include characters a, b, and c) (e.g.2 /[a-z0-9]/; will include characters a to z and numbers 0 to 9)
-^   =   carrot character excludes characters you do not want to match. (e.g. /[^aeiou]/; will not include vowels) (e.g.2 /[^aeiou^0-9]/; will not include vowels and numbers)
-+   =   Match Characters that Occur One or More Times. (e.g. /a+/g; would find one match in "abc" and return ["a"]. Because of the +, it would also find a single match in "aabc" and return ["aa"].)
-*   =   Match Characters that Occur Zero or More Times (e.g. /go*/; would find one match in "gooooooooal!" and return ["goooooooo"]. It would also find a single match in "gut feeling" and return ["g"].
+***Only effective to characters or character sets next to the signs within)
+/./   =   wildcard period ("." can be replaced by any one character) (e.g. let huRegex = /b.g/;) *Can be bag, big, or bug.
+/[number-number]/   =   range setter (e.g. /[a-c]/; will include characters a, b, and c) (e.g.2 /[a-z0-9]/; will include characters a to z and numbers 0 to 9)
+/[^]/   =   carrot character excludes characters you do not want to match. (e.g. /[^aeiou]/; will not include vowels) (e.g.2 /[^aeiou^0-9]/; will not include vowels and numbers)
+/+/   =   Match Characters that Occur One or More Times. (e.g. /a+/g; would find one match in "abc" and return ["a"]. Because of the +, it would also find a single match in "aabc" and return ["aa"].)
+/*/   =   Match Characters that Occur Zero or More Times (e.g. /go*/; would find one match in "gooooooooal!" and return ["goooooooo"]. It would also find a single match in "gut feeling" and return ["g"].
 
 
-\w  =   [A-Za-z0-9_]
-\W  =   [^A-Za-z0-9_]
-\d  =   [0-9]
-\D  =   [^0-9]
+- [Default] Greedy match finds the longest possible part of a string that fits the regex pattern and returns it as a match.
+- [? character is used for lazy match] Lazy match, which finds the smallest possible part of the string that satisfies the regex pattern.
+
+/^example/   =   Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+/example$/   =   You can search the end of strings using the dollar sign character $ at the end of the regex.
+
+\w  =   [A-Za-z0-9_]  Matches all letters and numbers + "_" underscore.
+\W  =   [^A-Za-z0-9_] Matches everything but letters and numbers + "_" underscore.
+\d  =   [0-9]   Match all numbers.
+\D  =   [^0-9]  Match everything but numbers.
+
+/\s/  =   Searching for whitespace. (e.g. let spaceRegex = /\s/g;   // Returns [" ", " "]) This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters.
+/\S/  =   This pattern will not match whitespace, carriage return, tab, form feed, and new line characters.
+
