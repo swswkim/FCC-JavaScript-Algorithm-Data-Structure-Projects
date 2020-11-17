@@ -32,3 +32,6 @@ testRegex.match(matchStr);
 /\s/  =   Searching for whitespace. (e.g. let spaceRegex = /\s/g;   // Returns [" ", " "]) This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters.
 /\S/  =   This pattern will not match whitespace, carriage return, tab, form feed, and new line characters.
 
+Quantity specifiers = For example, to match only the letter a appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/;
+/a{3,5}h/;  =   This means to find a "a" that appears between 3 to 5 times.
+
