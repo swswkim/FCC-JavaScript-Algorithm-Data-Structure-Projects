@@ -35,3 +35,14 @@ testRegex.match(matchStr);
 Quantity specifiers = For example, to match only the letter a appearing between 3 and 5 times in the string "ah", your regex would be /a{3,5}h/;
 /a{3,5}h/;  =   This means to find a "a" that appears between 3 to 5 times.
 
+Specifying only the lower number of matches.
+For example, to match only the string "hah" with the letter a appearing at least 3 times, your regex would be /ha{3,}h/;
+
+Specifying exact number of matches.
+For example, to match only the word "hah" with the letter a 3 times, your regex would be /ha{3}h/;
+
+?   =   This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
+let american = "color";   // Returns True
+let british = "colour";   // Returns True
+let rainbowRegex= /colou?r/;
+
