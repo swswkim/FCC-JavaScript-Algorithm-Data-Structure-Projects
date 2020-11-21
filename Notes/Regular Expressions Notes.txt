@@ -41,8 +41,27 @@ For example, to match only the string "hah" with the letter a appearing at least
 Specifying exact number of matches.
 For example, to match only the word "hah" with the letter a 3 times, your regex would be /ha{3}h/;
 
+Check for all or none.
 ?   =   This checks for zero or one of the preceding element. You can think of this symbol as saying the previous element is optional.
 let american = "color";   // Returns True
 let british = "colour";   // Returns True
-let rainbowRegex= /colou?r/;
+let rainbowRegex= /colou?r/;  // Checks for "u" but does not care if it exists or not.
+
+Positive and Negative Lookahead
+A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it.
+A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+
+On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there.
+A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+Example: Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
+let sampleWord = "astronaut";
+let pwRegex = /^\D(?=\w{5})(?=\w*\d{2})/;
+let result = pwRegex.test(sampleWord);
+
+Check For Mixed Grouping of Characters - to check for groups of characters using a Regular Expression, we use parentheses ().
+If you want to find either Penguin or Pumpkin in a string, you can use the following Regular Expression: /P(engu|umpk)in/g
+
+Reuse Patterns Using Capture Groups
+Search for repeat substrings using capture groups. Parentheses, ( and ), are used to find repeat substrings.
 
