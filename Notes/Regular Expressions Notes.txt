@@ -64,4 +64,12 @@ If you want to find either Penguin or Pumpkin in a string, you can use the follo
 
 Reuse Patterns Using Capture Groups
 Search for repeat substrings using capture groups. Parentheses, ( and ), are used to find repeat substrings.
+To specify where that repeat string will appear, you use a backslash (\) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be \1 to match the first group.
 
+Use Capture Groups to Search and Replace
+Search and replace text in a string using .replace() on a string.
+You can also access capture groups in the replacement string with dollar signs ($).
+
+Remove Whitespace from Start and End
+String.prototype.trim();
+Using regular expressions - let wsRegex = /^(\s+)|(\s+)$/g;
